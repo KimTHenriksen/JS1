@@ -32,3 +32,10 @@ export function addToCart(product) {
 
   saveCart(cart);
 }
+
+// --- REMOVE FROM CART ---
+export function removeFromCart(id) {
+  const cart = getCart().filter((item) => item.id !== id);
+
+  saveCart(cart);
+}

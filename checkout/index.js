@@ -1,6 +1,6 @@
 "use strict";
 
-import { getCart } from "../cart/index.js";
+import { getCart, removeFromCart } from "../cart/index.js";
 
 const container = document.querySelector("#checkoutContainer");
 
@@ -21,14 +21,21 @@ function renderCart() {
     const title = document.createElement("h3");
     const price = document.createElement("p");
     const quantity = document.createElement("p");
+    const button = document.createElement("button");
 
     title.textContent = item.title;
     price.textContent = `Price: ${item.price} NOK`;
     quantity.textContent = `Quantity: ${item.quantity}`;
+    button.textContent = "Remove";
+
+    button.addEventListener("click", () => {
+      removeFromCart(item.id);
+      renderCart();
+    });
 
     total += item.price * item.quantity;
 
-    div.append(title, price, quantity);
+    div.append(title, price, quantity, button);
     container.appendChild(div);
   });
 
