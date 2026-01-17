@@ -24,7 +24,11 @@ async function fetchAndCreateProducts() {
       card.appendChild(title);
       card.appendChild(price);
 
-      container.appendChild(card);
+      const link = document.createElement("a");
+      link.href = `product/index.html?id=${product.id}`;
+
+      link.appendChild(card);
+      container.appendChild(link);
     });
   } catch (error) {
     console.error("Error fetching products", error);
