@@ -39,3 +39,31 @@ export function removeFromCart(id) {
 
   saveCart(cart);
 }
+
+// --- INCREASE QUANTITY ---
+export function increaseQuantity(id) {
+  const cart = getCart();
+  const item = cart.find((item) => item.id === id);
+
+  if (item) {
+    item.quantity += 1;
+    saveCart(cart);
+  }
+}
+
+// --- DECREASE QUANTITY ---
+export function decreaseQuantity(id) {
+  const cart = getCart();
+  const item = cart.find((item) => item.id === id);
+
+  if (!item) return;
+
+  if (item.quantity > 1) {
+    item.quantity -= 1;
+  } else {
+    const index = cart.findIndex((i) => i.id === id);
+    cart.splice(index, 1);
+  }
+
+  saveCart(cart);
+}

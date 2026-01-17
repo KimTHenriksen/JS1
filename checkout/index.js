@@ -1,6 +1,11 @@
 "use strict";
 
-import { getCart, removeFromCart } from "../cart/index.js";
+import {
+  getCart,
+  removeFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+} from "../cart/index.js";
 
 const container = document.querySelector("#checkoutContainer");
 
@@ -20,22 +25,41 @@ function renderCart() {
 
     const title = document.createElement("h3");
     const price = document.createElement("p");
-    const quantity = document.createElement("p");
-    const button = document.createElement("button");
+
+    const controls = document.createElement("div");
+    const decreaseBtn = document.createElement("button");
+    const quantity = document.createElement("span");
+    const increaseBtn = document.createElement("button");
+    const removeBtn = document.createElement("button");
 
     title.textContent = item.title;
     price.textContent = `Price: ${item.price} NOK`;
-    quantity.textContent = `Quantity: ${item.quantity}`;
-    button.textContent = "Remove";
 
-    button.addEventListener("click", () => {
+    decreaseBtn.textContent = "-";
+    quantity.textContent = item.quantity;
+    increaseBtn.textContent = "+";
+    removeBtn.textContent = "Remove";
+
+    decreaseBtn.addEventListener("click", () => {
+      decreaseQuantity(item.id);
+      renderCart();
+    });
+
+    increaseBtn.addEventListener("click", () => {
+      increaseQuantity(item.id);
+      renderCart();
+    });
+
+    removeBtn.addEventListener("click", () => {
       removeFromCart(item.id);
       renderCart();
     });
 
+    controls.append(decreaseBtn, quantity, increaseBtn);
+
     total += item.price * item.quantity;
 
-    div.append(title, price, quantity, button);
+    div.append(title, price, controls, removeBtn);
     container.appendChild(div);
   });
 
