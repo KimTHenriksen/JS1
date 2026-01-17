@@ -69,3 +69,11 @@ function renderCart() {
 }
 
 renderCart();
+
+const confirmBtn = document.querySelector("#confirmOrderBtn");
+
+if (confirmBtn) {
+  confirmBtn.addEventListener("click", () => {
+    window.location.href = "/checkout/confirmation/index.html";
+  });
+}
