@@ -1,5 +1,7 @@
 "use strict";
 
+import { addToCart } from "../cart/index.js";
+
 const container = document.querySelector("#productContainer");
 const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
@@ -22,6 +24,14 @@ async function fetchAndCreateProducts() {
     const description = document.createElement("p");
     const price = document.createElement("p");
 
+    const button = document.createElement("button");
+    button.textContent = "Add to cart";
+
+    button.addEventListener("click", () => {
+      addToCart(product);
+      alert("Added to cart");
+    });
+
     image.src = product.image.url;
     image.alt = product.image.alt || product.title;
     title.textContent = product.title;
@@ -32,6 +42,7 @@ async function fetchAndCreateProducts() {
     container.appendChild(title);
     container.appendChild(description);
     container.appendChild(price);
+    container.appendChild(button);
   } catch (error) {
     console.error("Error fetching product", error);
   }
