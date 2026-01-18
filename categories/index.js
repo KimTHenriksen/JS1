@@ -16,12 +16,16 @@ function renderProducts(products) {
     const title = document.createElement("h3");
     const image = document.createElement("img");
 
+    const link = document.createElement("a");
+    link.href = `../product/index.html?id=${product.id}`;
+
     image.src = product.image.url;
     image.alt = product.image.alt || product.title;
     title.textContent = product.title;
 
     card.append(image, title);
-    container.appendChild(card);
+    link.appendChild(card);
+    container.appendChild(link);
   });
 }
 
