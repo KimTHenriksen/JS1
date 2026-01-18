@@ -106,6 +106,7 @@ button:hover {
   max-width: 400px;
   height: auto;
   border-radius: 8px;
+  align-self: center;
 }
 
 #productContainer h1 {
