@@ -1,5 +1,6 @@
 "use strict";
 
+// --- IMPORTS ---
 import {
   getCart,
   removeFromCart,
@@ -7,13 +8,16 @@ import {
   decreaseQuantity,
 } from "../cart/index.js";
 
+// --- DOM ---
 const container = document.querySelector("#checkoutContainer");
 const confirmBtn = document.querySelector("#confirmOrderBtn");
 
+// --- FUNCTIONS ---
 function renderCart() {
   const cart = getCart();
   container.innerHTML = "";
 
+  // --- EMPTY CART ---
   if (cart.length === 0) {
     container.textContent = "Your cart is empty";
     confirmBtn.style.display = "none";
@@ -77,10 +81,11 @@ function renderCart() {
   container.appendChild(totalEl);
 }
 
-renderCart();
-
 if (confirmBtn) {
   confirmBtn.addEventListener("click", () => {
     window.location.href = "confirmation/index.html";
   });
 }
+
+// --- INIT ---
+renderCart();
