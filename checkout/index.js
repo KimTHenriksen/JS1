@@ -8,6 +8,7 @@ import {
 } from "../cart/index.js";
 
 const container = document.querySelector("#checkoutContainer");
+const confirmBtn = document.querySelector("#confirmOrderBtn");
 
 function renderCart() {
   const cart = getCart();
@@ -15,8 +16,11 @@ function renderCart() {
 
   if (cart.length === 0) {
     container.textContent = "Your cart is empty";
+    confirmBtn.style.display = "none";
     return;
   }
+
+  confirmBtn.style.display = "block";
 
   let total = 0;
 
@@ -74,8 +78,6 @@ function renderCart() {
 }
 
 renderCart();
-
-const confirmBtn = document.querySelector("#confirmOrderBtn");
 
 if (confirmBtn) {
   confirmBtn.addEventListener("click", () => {

@@ -40,6 +40,11 @@ export function removeFromCart(id) {
   saveCart(cart);
 }
 
+// --- CLEAR  CART ---
+export function clearCart() {
+  localStorage.removeItem("cart");
+}
+
 // --- INCREASE QUANTITY ---
 export function increaseQuantity(id) {
   const cart = getCart();
