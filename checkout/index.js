@@ -27,10 +27,15 @@ function renderCart() {
     const price = document.createElement("p");
 
     const controls = document.createElement("div");
+    controls.classList.add("quantity-controls");
+
     const decreaseBtn = document.createElement("button");
     const quantity = document.createElement("span");
     const increaseBtn = document.createElement("button");
     const removeBtn = document.createElement("button");
+    removeBtn.textContent = "Remove";
+
+    removeBtn.classList.add("remove-btn");
 
     title.textContent = item.title;
     price.textContent = `Price: ${item.price} NOK`;
@@ -38,7 +43,6 @@ function renderCart() {
     decreaseBtn.textContent = "-";
     quantity.textContent = item.quantity;
     increaseBtn.textContent = "+";
-    removeBtn.textContent = "Remove";
 
     decreaseBtn.addEventListener("click", () => {
       decreaseQuantity(item.id);
@@ -65,6 +69,7 @@ function renderCart() {
 
   const totalEl = document.createElement("p");
   totalEl.textContent = `Total: ${total} NOK`;
+  totalEl.classList.add("total");
   container.appendChild(totalEl);
 }
 

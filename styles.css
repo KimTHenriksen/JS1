@@ -90,23 +90,56 @@ button:hover {
   background-color: #ff9f55;
 }
 
+/* PRODUCT PAGE*/
+
+#productContainer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#productContainer img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+}
+
+#productContainer h1 {
+  font-family: "Abril Fatface", serif;
+  margin: 0;
+}
+
+#productContainer p {
+  max-width: 600px;
+  margin: 8px 0;
+}
+
+#productContainer .price {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
 /* Categories */
 
-/* Checkout */
+/* CHECKOUT PAGE */
 
-#checkoutContainer {
+.checkout #checkoutContainer {
   max-width: 600px;
   margin: 0 auto;
   padding: 16px;
 }
 
-#checkoutContainer > div {
+.checkout #checkoutContainer > div {
   border-bottom: 1px solid #444;
   padding: 12px 0;
   margin-bottom: 12px;
 }
 
-#checkoutContainer button {
+.checkout #checkoutContainer button {
   margin: 4px;
   padding: 6px 10px;
   background-color: #f1883c;
@@ -115,32 +148,73 @@ button:hover {
   cursor: pointer;
 }
 
-#checkoutContainer button:hover {
+.checkout #checkoutContainer button:hover {
   background-color: #ff9f55;
 }
 
-#checkoutContainer span {
+.checkout #checkoutContainer span {
   margin: 0 8px;
   font-weight: bold;
 }
 
-#checkoutContainer p:last-child {
-  font-size: 1.2 rem;
+.checkout .total {
+  font-size: 1.2rem;
   font-weight: bold;
   margin-top: 20px;
 }
 
-#confirmOrderBtn {
+.checkout #confirmOrderBtn {
   display: block;
   margin: 24px auto;
   padding: 12px 20px;
-  font-size: 1 rem;
+  font-size: 1rem;
   background-color: #f1883c;
   border: none;
   border-radius: 6px;
   cursor: pointer;
 }
 
-#confirmOrderBtn:hover {
+.checkout #confirmOrderBtn:hover {
+  background-color: #ff9f55;
+}
+
+.checkout .quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+.checkout .remove-btn {
+  margin-top: 6px;
+}
+
+/* CONFIRMATION PAGE*/
+
+.confirmation {
+  text-align: center;
+}
+
+.confirmation h1 {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.confirmation p {
+  margin-bottom: 24px;
+  font-size: 1rem;
+}
+
+.confirmation a {
+  display: inline-block;
+  background-color: #f1883c;
+  color: #151414;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 0.5rem;
+}
+
+.confirmation a:hover {
   background-color: #ff9f55;
 }
