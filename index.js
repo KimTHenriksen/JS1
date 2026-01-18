@@ -1,5 +1,6 @@
 "use strict";
 
+// --- DOM ---
 const container = document.querySelector("#productsContainer");
 const searchInput = document.querySelector("#searchInput");
 
@@ -7,7 +8,7 @@ const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
 let allProducts = [];
 
-// --- RENDER ---
+// --- RENDER PRODUCTS ---
 
 function renderProducts(products) {
   container.innerHTML = "";
@@ -28,7 +29,7 @@ function renderProducts(products) {
   });
 }
 
-// --- FETCH ---
+// --- FETCH PRODUCTS FROM API ---
 async function fetchAndCreateProducts() {
   try {
     const response = await fetch(API_URL);

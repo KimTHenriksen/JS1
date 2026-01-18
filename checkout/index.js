@@ -12,7 +12,7 @@ import {
 const container = document.querySelector("#checkoutContainer");
 const confirmBtn = document.querySelector("#confirmOrderBtn");
 
-// --- FUNCTIONS ---
+// --- RENDER CART ---
 function renderCart() {
   const cart = getCart();
   container.innerHTML = "";
@@ -52,6 +52,7 @@ function renderCart() {
     quantity.textContent = item.quantity;
     increaseBtn.textContent = "+";
 
+    // --- EVENT LISTENER ---
     decreaseBtn.addEventListener("click", () => {
       decreaseQuantity(item.id);
       renderCart();
@@ -75,12 +76,14 @@ function renderCart() {
     container.appendChild(div);
   });
 
+  // --- TOTAL ---
   const totalEl = document.createElement("p");
   totalEl.textContent = `Total: ${total.toFixed(2)} NOK`;
   totalEl.classList.add("total");
   container.appendChild(totalEl);
 }
 
+// --- CONFIRM ORDER ---
 if (confirmBtn) {
   confirmBtn.addEventListener("click", () => {
     window.location.href = "confirmation/index.html";

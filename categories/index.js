@@ -1,5 +1,6 @@
 "use strict";
 
+// --- DOM ---
 const container = document.querySelector("#productsContainer");
 const filter = document.querySelector("#genreFilter");
 
