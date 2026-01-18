@@ -23,8 +23,24 @@ async function fetchAndCreateProducts() {
     const title = document.createElement("h1");
     const description = document.createElement("p");
     const price = document.createElement("p");
-
+    const genre = document.createElement("p");
+    const released = document.createElement("p");
+    const rating = document.createElement("p");
     const button = document.createElement("button");
+
+    image.src = product.image.url;
+    image.alt = product.image.alt || product.title;
+
+    title.textContent = product.title;
+    description.textContent = product.description;
+    description.classList.add("description");
+
+    price.textContent = `Price: ${product.price.toFixed(2)} NOK`;
+    price.classList.add("price");
+
+    genre.textContent = `Genre: ${product.genre}`;
+    released.textContent = `Released: ${product.released}`;
+    rating.textContent = `Rating: ${product.rating}`;
     button.textContent = "Add to cart";
 
     button.addEventListener("click", () => {
@@ -32,16 +48,11 @@ async function fetchAndCreateProducts() {
       alert("Added to cart");
     });
 
-    image.src = product.image.url;
-    image.alt = product.image.alt || product.title;
-    title.textContent = product.title;
-    description.textContent = product.description;
-
-    price.textContent = `${product.price.toFixed(2)} NOK`;
-    price.classList.add("price");
-
     container.appendChild(image);
     container.appendChild(title);
+    container.appendChild(genre);
+    container.appendChild(released);
+    container.appendChild(rating);
     container.appendChild(description);
     container.appendChild(price);
     container.appendChild(button);
