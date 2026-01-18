@@ -12,17 +12,11 @@ async function fetchAndCreateProducts() {
     products.forEach((product) => {
       const card = document.createElement("div");
       const image = document.createElement("img");
-      const title = document.createElement("h2");
-      const price = document.createElement("p");
 
       image.src = product.image.url;
       image.alt = product.image.alt || product.title;
-      title.textContent = product.title;
-      price.textContent = `${product.price} NOK`;
 
       card.appendChild(image);
-      card.appendChild(title);
-      card.appendChild(price);
 
       const link = document.createElement("a");
       link.href = `product/index.html?id=${product.id}`;

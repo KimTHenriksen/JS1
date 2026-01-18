@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../styles.css" />
   </head>
 
-  <body>
+  <body class="categories">
     <header>
       <nav>
         <a href="/index.html">Home</a>
@@ -15,5 +15,22 @@
         <a href="../checkout/index.html">Cart</a>
       </nav>
     </header>
+
+    <main>
+      <h1>Categories</h1>
+
+      <label for="genreFilter">Genre:</label>
+      <select id="genreFilter">
+        <option value="all">All</option>
+        <option value="Action">Action</option>
+        <option value="Drama">Drama</option>
+        <option value="Comedy">Comedy</option>
+        <option value="Horror">Horror</option>
+      </select>
+
+      <div id="productsContainer"></div>
+    </main>
+
+    <script src="./index.js"></script>
   </body>
 </html>

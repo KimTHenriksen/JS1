@@ -36,7 +36,8 @@ async function fetchAndCreateProducts() {
     image.alt = product.image.alt || product.title;
     title.textContent = product.title;
     description.textContent = product.description;
-    price.textContent = `${product.price} NOK`;
+
+    price.textContent = `${product.price.toFixed(2)} NOK`;
     price.classList.add("price");
 
     container.appendChild(image);

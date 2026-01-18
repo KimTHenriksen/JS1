@@ -38,7 +38,7 @@ function renderCart() {
     removeBtn.classList.add("remove-btn");
 
     title.textContent = item.title;
-    price.textContent = `Price: ${item.price} NOK`;
+    price.textContent = `Price: ${item.price.toFixed(2)} NOK`;
 
     decreaseBtn.textContent = "-";
     quantity.textContent = item.quantity;
@@ -68,7 +68,7 @@ function renderCart() {
   });
 
   const totalEl = document.createElement("p");
-  totalEl.textContent = `Total: ${total} NOK`;
+  totalEl.textContent = `Total: ${total.toFixed(2)} NOK`;
   totalEl.classList.add("total");
   container.appendChild(totalEl);
 }
