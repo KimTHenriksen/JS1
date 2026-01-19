@@ -1,8 +1,8 @@
-"use strict";
+("use strict");
 
 // --- IMPORTS ---
 
-import { addToCart } from "../cart/index.js";
+import { addToCart, updateCartCount } from "../cart/index.js";
 
 // --- DOM ---
 const container = document.querySelector("#productContainer");
@@ -52,7 +52,7 @@ async function fetchAndCreateProducts() {
     // --- EVENT LISTENERS ---
     button.addEventListener("click", () => {
       addToCart(product);
-      alert("Added to cart");
+      updateCartCount();
     });
 
     // --- APPEND TO DOM ---
@@ -71,3 +71,5 @@ async function fetchAndCreateProducts() {
 
 // --- INIT ---
 fetchAndCreateProducts();
+
+updateCartCount();

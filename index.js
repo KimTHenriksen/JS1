@@ -1,5 +1,8 @@
 "use strict";
 
+// --- IMPORTS ---
+import { updateCartCount } from "./cart/index.js";
+
 // --- DOM ---
 const container = document.querySelector("#productsContainer");
 const searchInput = document.querySelector("#searchInput");
@@ -21,7 +24,7 @@ function renderProducts(products) {
     image.alt = product.image.alt || product.title;
 
     const link = document.createElement("a");
-    link.href = `product/index.html?id=${product.id}`;
+    link.href = `products/index.html?id=${product.id}`;
 
     card.appendChild(image);
     link.appendChild(card);
@@ -55,3 +58,5 @@ searchInput.addEventListener("input", () => {
 
 // --- INIT ---
 fetchAndCreateProducts();
+
+updateCartCount();

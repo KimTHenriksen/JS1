@@ -35,6 +35,19 @@ h1 {
   margin-bottom: 24px;
 }
 
+#cart-link {
+  position: relative;
+}
+
+#cartCount {
+  background-color: #f1883c;
+  color: #151414;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 1rem;
+  margin-left: 6px;
+}
+
 /* Home Product */
 #productsContainer {
   display: flex;

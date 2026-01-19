@@ -6,6 +6,7 @@ import {
   removeFromCart,
   increaseQuantity,
   decreaseQuantity,
+  updateCartCount,
 } from "../cart/index.js";
 
 // --- DOM ---
@@ -92,3 +93,5 @@ if (confirmBtn) {
 
 // --- INIT ---
 renderCart();
+
+updateCartCount();

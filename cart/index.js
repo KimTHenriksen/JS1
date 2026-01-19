@@ -72,3 +72,15 @@ export function decreaseQuantity(id) {
 
   saveCart(cart);
 }
+
+// --- CART COUNT ---
+export function updateCartCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartCount = document.querySelector("#cartCount");
+
+  if (!cartCount) return;
+
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+  cartCount.textContent = totalItems;
+}
