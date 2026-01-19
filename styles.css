@@ -129,6 +129,10 @@ button:hover {
 }
 
 /* Categories */
+.categories .category-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
 
 /* CHECKOUT PAGE */
 

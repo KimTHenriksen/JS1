@@ -3,6 +3,7 @@
 // --- DOM ---
 const container = document.querySelector("#productsContainer");
 const filter = document.querySelector("#genreFilter");
+const message = document.querySelector("#categoryMessage");
 
 const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
@@ -33,15 +34,16 @@ function renderProducts(products) {
 // --- FETCH ---
 async function fetchProducts() {
   try {
-    container.textContent = "Loading...";
+    message.textContent = "Loading movies...";
+    container.innerHTML = "";
 
     const response = await fetch(API_URL);
     const data = await response.json();
 
     allProducts = data.data;
-    renderProducts(allProducts);
+    message.textContent = "Select a genre";
   } catch (error) {
-    container.textContent = "Could not load products";
+    container.textContent = "Could not load movies";
   }
 }
 
@@ -50,9 +52,12 @@ filter.addEventListener("change", () => {
   const selectedGenre = filter.value;
 
   if (selectedGenre === "all") {
+    message.textContent = "Showing all movies";
     renderProducts(allProducts);
     return;
   }
+
+  message.textContent = `Showing ${selectedGenre} movies`;
 
   const filteredProducts = allProducts.filter((product) =>
     product.genre.includes(selectedGenre),

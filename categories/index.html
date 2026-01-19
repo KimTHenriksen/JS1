@@ -27,15 +27,18 @@
     <main>
       <h1>Categories</h1>
 
-      <label for="genreFilter">Genre:</label>
-      <select id="genreFilter">
-        <option value="all">All</option>
-        <option value="Action">Action</option>
-        <option value="Drama">Drama</option>
-        <option value="Comedy">Comedy</option>
-        <option value="Horror">Horror</option>
-      </select>
+      <div class="category-header">
+        <p id="categoryMessage"></p>
 
+        <label for="genreFilter">Genre:</label>
+        <select id="genreFilter">
+          <option value="all">All</option>
+          <option value="Action">Action</option>
+          <option value="Drama">Drama</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Horror">Horror</option>
+        </select>
+      </div>
       <div id="productsContainer"></div>
     </main>
 
