@@ -35,13 +35,15 @@ function renderProducts(products) {
 // --- FETCH PRODUCTS FROM API ---
 async function fetchAndCreateProducts() {
   try {
+    container.textContent = "Loading movies..";
+
     const response = await fetch(API_URL);
     const data = await response.json();
 
     allProducts = data.data;
     renderProducts(allProducts);
   } catch (error) {
-    console.error("Error fetching products", error);
+    console.textContent = "Could not load movies";
   }
 }
 

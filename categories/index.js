@@ -37,7 +37,7 @@ function renderProducts(products) {
 // --- FETCH ---
 async function fetchProducts() {
   try {
-    message.textContent = "Loading movies...";
+    message.textContent = "Loading...";
     container.innerHTML = "";
 
     const response = await fetch(API_URL);
@@ -46,7 +46,7 @@ async function fetchProducts() {
     allProducts = data.data;
     message.textContent = "Select a genre";
   } catch (error) {
-    container.textContent = "Could not load movies";
+    container.textContent = "Could not load genre";
   }
 }
 

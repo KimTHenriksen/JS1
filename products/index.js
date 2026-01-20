@@ -15,7 +15,7 @@ async function fetchAndCreateProducts() {
     const id = params.get("id");
 
     if (!id) {
-      container.textContent = "No product ID found";
+      container.textContent = "Loading movie...";
       return;
     }
 
