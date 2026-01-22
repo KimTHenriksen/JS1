@@ -1,3 +1,5 @@
+"use strict";
+
 // --- IMPORTS ---
 
 import { addToCart, updateCartCount } from "../cart/index.js";

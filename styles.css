@@ -297,6 +297,25 @@ button:hover {
   margin-top: 6px;
 }
 
+.checkout-form {
+  max-width: 400px;
+  margin: 32px auto;
+}
+
+.checkout-form div {
+  margin-bottom: 16px;
+}
+
+.checkout-form input {
+  width: 100%;
+  padding: 8px;
+}
+
+.error {
+  color: #d8000c;
+  font-size: 0.9rem;
+}
+
 /* CONFIRMATION PAGE*/
 
 .confirmation {

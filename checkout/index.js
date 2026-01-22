@@ -1,3 +1,5 @@
+"use strict";
+
 // --- IMPORTS ---
 import {
   getCart,
@@ -9,7 +11,43 @@ import {
 
 // --- DOM ---
 const container = document.querySelector("#checkoutContainer");
-const confirmBtn = document.querySelector("#confirmOrderBtn");
+const form = document.querySelector("#checkout-form");
+
+//--- FORM VALIDATION ---
+if (form) {
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const fullNameInput = document.getElementById("fullName");
+    const emailInput = document.getElementById("email");
+
+    const fullNameError = document.getElementById("fullName-error");
+    const emailError = document.getElementById("email-error");
+
+    fullNameError.textContent = "";
+    emailError.textContent = "";
+
+    const fullName = fullNameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    let isValid = true;
+
+    if (fullName === "") {
+      fullNameError.textContent = "Full name is required.";
+      isValid = false;
+    }
+
+    if (!email.includes("@")) {
+      emailError.textContent = "Please enter a valid email address.";
+      isValid = false;
+    }
+
+    if (isValid) {
+      localStorage.removeItem("cart");
+      window.location.href = "../checkout/confirmation/index.html";
+    }
+  });
+}
 
 // --- RENDER CART ---
 function renderCart() {
@@ -19,11 +57,8 @@ function renderCart() {
   // --- EMPTY CART ---
   if (cart.length === 0) {
     container.textContent = "Your cart is empty";
-    confirmBtn.style.display = "none";
     return;
   }
-
-  confirmBtn.style.display = "block";
 
   let total = 0;
 
@@ -80,13 +115,6 @@ function renderCart() {
   totalEl.textContent = `Total: ${total.toFixed(2)} NOK`;
   totalEl.classList.add("total");
   container.appendChild(totalEl);
-}
-
-// --- CONFIRM ORDER ---
-if (confirmBtn) {
-  confirmBtn.addEventListener("click", () => {
-    window.location.href = "confirmation/index.html";
-  });
 }
 
 // --- INIT ---

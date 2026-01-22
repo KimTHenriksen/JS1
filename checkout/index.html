@@ -21,7 +21,7 @@
         <a href="../index.html" class="logo">
           <img
             src="../assets/images/squareeyes-logo.png"
-            alt="Squereyes logo"
+            alt="SquerEyes logo"
           />
         </a>
 
@@ -38,8 +38,27 @@
 
     <main>
       <h1>Checkout</h1>
-      <div id="checkoutContainer"></div>
-      <button id="confirmOrderBtn">Confirm order</button>
+
+      <section class="checkout-form">
+        <h2>Details</h2>
+
+        <form id="checkout-form">
+          <div id="checkoutContainer"></div>
+          <div>
+            <label for="fullName">Full name:</label>
+            <input type="text" id="fullName" />
+            <div id="fullName-error" class="error"></div>
+          </div>
+
+          <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" />
+            <div id="email-error" class="error"></div>
+          </div>
+
+          <button type="submit" id="confirmOrderBtn">Confirm order</button>
+        </form>
+      </section>
     </main>
 
     <footer class="page-footer">
