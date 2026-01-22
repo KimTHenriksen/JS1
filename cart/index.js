@@ -1,5 +1,3 @@
-"use strict";
-
 const CART_KEY = "cart";
 
 // --- GET CART ---

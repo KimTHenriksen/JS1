@@ -1,5 +1,3 @@
-("use strict");
-
 // --- IMPORTS ---
 import { updateCartCount } from "../cart/index.js";
 

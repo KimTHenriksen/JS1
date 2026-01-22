@@ -1,5 +1,3 @@
-"use strict";
-
 // --- IMPORTS ---
 import {
   getCart,
