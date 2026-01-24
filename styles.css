@@ -346,3 +346,15 @@ button:hover {
 .confirmation a:hover {
   background-color: #ff9f55;
 }
+
+/* TERMS & PRIVACY PAGE */
+.legal-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.legal-page h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
