@@ -9,19 +9,23 @@ const container = document.querySelector("#productContainer");
 const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
 // --- FETCH ---
+
 async function fetchAndCreateProducts() {
+  container.textContent = "Loading movie...";
   try {
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
     if (!id) {
-      container.textContent = "Loading movie...";
+      container.textContent = "Can't find movie...";
       return;
     }
 
     const response = await fetch(`${API_URL}/${id}`);
     const data = await response.json();
     const product = data.data;
+
+    container.textContent = "";
 
     // --- CREATE ELEMENTS ---
     const image = document.createElement("img");
@@ -65,7 +69,7 @@ async function fetchAndCreateProducts() {
     container.appendChild(price);
     container.appendChild(button);
   } catch (error) {
-    console.error("Error fetching product", error);
+    container.textContent = "Can't load movie. Please try again later.";
   }
 }
 
