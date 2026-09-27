@@ -16,6 +16,11 @@ let allProducts = [];
 function renderProducts(products) {
   container.innerHTML = "";
 
+  if (products.length === 0) {
+    container.textContent = "Can't find any movies.";
+    return;
+  }
+
   products.forEach((product) => {
     const card = document.createElement("div");
     const image = document.createElement("img");
@@ -43,7 +48,7 @@ async function fetchAndCreateProducts() {
     allProducts = data.data;
     renderProducts(allProducts);
   } catch (error) {
-    console.textContent = "Could not load movies";
+    container.textContent = "Could not load movies";
   }
 }
 
