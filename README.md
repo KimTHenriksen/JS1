@@ -34,3 +34,7 @@ For Portfolio 1 I made some improvements to the project:
 - HTML
 - CSS
 - JavaScript
+
+## Author
+
+Kim T Henriksen
